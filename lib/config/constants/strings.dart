@@ -6,7 +6,7 @@ class AppStrings {
   static const String welcomeBack = 'Welcome Back To';
   static const String cooksCorner = 'CooksCorner';
   static const String signIn = 'Sign In';
-  static const String noAccount = 'I dont have any account';
+  static const String noAccount = 'I dont have any account? ';
   static const String signUpNow = 'Sign Up Now';
   static const String enterName = 'Enter your name';
   static const String name = 'Name';
@@ -15,7 +15,7 @@ class AppStrings {
   static const String rePassword = 'Re-Password';
   static const String reEnterPassword = 'Re-Enter your password';
   static const String signUp = 'Sign Up';
-  static const String haveAccount = 'Already have an account?';
+  static const String haveAccount = 'Already have an account? ';
   static const String signInNow = 'Sign In Now';
   static const String signUpFor = 'Sign up for delicious';
   static const String discoveries = 'Discoveries';
