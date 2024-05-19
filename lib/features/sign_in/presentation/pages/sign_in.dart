@@ -127,11 +127,6 @@ class _SignInState extends State<SignIn> {
                                 signInBloc.add(SignInSubmitted());
                               }
                             : null,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: isFormValid
-                              ? AppColors.primary
-                              : AppColors.iconFaded,
-                        ),
                         child: Text(
                           AppStrings.signIn,
                           style: Styles.s14w400.copyWith(color: Colors.white),

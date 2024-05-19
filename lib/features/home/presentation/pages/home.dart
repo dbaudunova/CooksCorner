@@ -48,39 +48,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                     Tab(text: AppStrings.dinner),
                   ],
                 ),
-                SizedBox(
-                  width: double.maxFinite,
-                  height: MediaQuery.of(context).size.height,
-                  child: TabBarView(
-                    controller: _tabController,
-                    children: [
-                   /*   _buildGridView(),
-                      _buildGridView(),
-                      _buildGridView(),*/
-                    ],
-                  ),
-                ),
               ],
             ),
           ),
         ],
       ),
-    );
-  }
-
-  GridView _buildGridView() {
-    return GridView.builder(
-      itemCount: 5,
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      itemBuilder: (context, index) {
-        return Card(
-          color: Colors.black,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-        );
-      },
     );
   }
 }
