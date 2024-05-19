@@ -77,7 +77,6 @@ flutter:
     - assets/heart.svg
     - assets/home_selected.svg
     - assets/home_unselected.svg
-    - assets/logout.svg
     - assets/profile_selected.svg
     - assets/profile_unselected.svg
     - assets/search_selected.svg

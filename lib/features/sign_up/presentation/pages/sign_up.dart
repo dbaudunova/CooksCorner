@@ -23,7 +23,8 @@ class _SignUpState extends State<SignUp> {
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          const OrangeBoxStyle(
+          OrangeBoxStyle(
+            height: MediaQuery.of(context).size.height / 3.5,
             thinText: AppStrings.signUpFor,
             boldText: AppStrings.discoveries,
           ),

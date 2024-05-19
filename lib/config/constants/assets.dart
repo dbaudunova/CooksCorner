@@ -10,7 +10,6 @@ class Assets {
   static const String heart = 'assets/heart.svg';
   static const String homeSelected = 'assets/home_selected.svg';
   static const String homeUnselected = 'assets/home_unselected.svg';
-  static const String logout = 'assets/logout.svg';
   static const String profileSelected = 'assets/profile_selected.svg';
   static const String profileUnselected = 'assets/profile_unselected.svg';
   static const String searchSelected = 'assets/search_selected.svg';

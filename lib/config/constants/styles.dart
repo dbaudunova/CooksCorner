@@ -30,7 +30,7 @@ class Styles {
     fontWeight: FontWeight.w400,
     fontFamily: 'PoppinsRegular',
     color: AppColors.textFaded,
-    fontSize: Dimens.d16,
+    fontSize: Dimens.d14,
   );
 
   static TextStyle s12w500 = TextStyle(
@@ -38,5 +38,19 @@ class Styles {
     fontFamily: 'PoppinsLight',
     color: AppColors.text,
     fontSize: Dimens.d12,
+  );
+
+  static TextStyle s18w500 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontFamily: 'PoppinsRegular',
+    color: AppColors.text,
+    fontSize: 18,
+  );
+
+  static TextStyle s20w500 = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontFamily: 'PoppinsRegular',
+    color: AppColors.text,
+    fontSize: 20,
   );
 }

@@ -8,16 +8,18 @@ class OrangeBoxStyle extends StatelessWidget {
     super.key,
     required this.thinText,
     required this.boldText,
+    required this.height,
   });
 
   final String thinText;
   final String boldText;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 3.5,
+      height: height,
       decoration: BoxDecoration(
         color: AppColors.primary,
       ),
