@@ -91,21 +91,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                 ),
               ),
               const SizedBox(height: Dimens.d16),
-              TabBar(
-                tabs: _tabList,
-                controller: _tabController,
-                dividerColor: Colors.transparent,
-                indicatorColor: Colors.transparent,
-                overlayColor: MaterialStateProperty.all(Colors.transparent),
-                labelStyle: Styles.s14w400.copyWith(
-                  color: AppColors.text,
-                  fontWeight: FontWeight.bold,
-                ),
-                unselectedLabelStyle: Styles.s14w400.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-                tabAlignment: TabAlignment.fill,
-              ),
+              _buildTabBar(),
               Expanded(
                 child: TabBarView(
                   controller: _tabController,
@@ -119,6 +105,24 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
           ),
         ),
       ),
+    );
+  }
+
+  TabBar _buildTabBar() {
+    return TabBar(
+      tabs: _tabList,
+      controller: _tabController,
+      dividerColor: Colors.transparent,
+      indicatorColor: Colors.transparent,
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
+      labelStyle: Styles.s14w400.copyWith(
+        color: AppColors.text,
+        fontWeight: FontWeight.bold,
+      ),
+      unselectedLabelStyle: Styles.s14w400.copyWith(
+        fontWeight: FontWeight.bold,
+      ),
+      tabAlignment: TabAlignment.fill,
     );
   }
 
@@ -155,7 +159,6 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
         ),
       ],
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
       title: Padding(
         padding: const EdgeInsets.only(left: Dimens.d20),
         child: Text(

@@ -31,7 +31,7 @@ class AppStrings {
   static const String follow = 'Follow';
   static const String searchRecipes = 'Search recipes';
   static const String addRecipe = 'Add your recipe';
-  static const String whatEat = 'What to eat today?';
+  static const String whatEat = 'What to eat\ntoday?';
   static const String manageProfile = 'Manage Profile';
   static const String myRecipe = 'My recipe';
   static const String savedRecipe = 'Saved recipe';
