@@ -1,5 +1,5 @@
-import 'package:cooks_corner/config/constants/colors.dart';
-import 'package:cooks_corner/config/constants/dimens.dart';
+import 'package:cooks_corner/core/constants/colors.dart';
+import 'package:cooks_corner/core/constants/dimens.dart';
 import 'package:flutter/material.dart';
 
 class Styles {

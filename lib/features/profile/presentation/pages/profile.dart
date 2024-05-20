@@ -1,7 +1,8 @@
-import 'package:cooks_corner/config/constants/colors.dart';
-import 'package:cooks_corner/config/constants/dimens.dart';
-import 'package:cooks_corner/config/constants/strings.dart';
-import 'package:cooks_corner/config/constants/styles.dart';
+import 'package:cooks_corner/core/constants/colors.dart';
+import 'package:cooks_corner/core/constants/dimens.dart';
+import 'package:cooks_corner/core/constants/strings.dart';
+import 'package:cooks_corner/core/constants/styles.dart';
+import 'package:cooks_corner/features/home/presentation/widgets/dish_card.dart';
 import 'package:cooks_corner/features/profile/presentation/widgets/elevated_button_style.dart';
 import 'package:cooks_corner/features/profile/presentation/widgets/exit_alert_dialog.dart';
 import 'package:cooks_corner/features/profile/presentation/widgets/follow_column_style.dart';
@@ -14,7 +15,19 @@ class Profile extends StatefulWidget {
   State<Profile> createState() => _ProfileState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfileState extends State<Profile> with TickerProviderStateMixin {
+  late TabController _tabController;
+  final List<Tab> _tabList = [
+    AppStrings.myRecipe,
+    AppStrings.savedRecipe,
+  ].map((title) => Tab(text: title)).toList();
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: _tabList.length, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,10 +90,51 @@ class _ProfileState extends State<Profile> {
                   onPressed: () {},
                 ),
               ),
+              const SizedBox(height: Dimens.d16),
+              TabBar(
+                tabs: _tabList,
+                controller: _tabController,
+                dividerColor: Colors.transparent,
+                indicatorColor: Colors.transparent,
+                overlayColor: MaterialStateProperty.all(Colors.transparent),
+                labelStyle: Styles.s14w400.copyWith(
+                  color: AppColors.text,
+                  fontWeight: FontWeight.bold,
+                ),
+                unselectedLabelStyle: Styles.s14w400.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+                tabAlignment: TabAlignment.fill,
+              ),
+              Expanded(
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    _buildGridView(),
+                    _buildGridView(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  GridView _buildGridView() {
+    return GridView.builder(
+      itemCount: 12,
+      shrinkWrap: true,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        childAspectRatio: 0.85,
+        crossAxisCount: 2,
+        mainAxisSpacing: 15,
+        crossAxisSpacing: 15,
+      ),
+      itemBuilder: (context, index) {
+        return const DishCard();
+      },
     );
   }
 

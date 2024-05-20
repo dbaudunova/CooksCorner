@@ -12,4 +12,5 @@ class Dimens{
   static const double d64 = 64;
   static const double d88 = 88;
   static const double d28 = 28;
+  static const double d8 = 8;
 }

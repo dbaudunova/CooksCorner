@@ -1,4 +1,4 @@
-import 'package:cooks_corner/config/constants/styles.dart';
+import 'package:cooks_corner/core/constants/styles.dart';
 import 'package:flutter/material.dart';
 
 class FollowColumnStyle extends StatelessWidget {

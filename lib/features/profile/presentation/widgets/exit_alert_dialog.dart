@@ -1,7 +1,7 @@
-import 'package:cooks_corner/config/constants/colors.dart';
-import 'package:cooks_corner/config/constants/dimens.dart';
-import 'package:cooks_corner/config/constants/strings.dart';
-import 'package:cooks_corner/config/constants/styles.dart';
+import 'package:cooks_corner/core/constants/colors.dart';
+import 'package:cooks_corner/core/constants/dimens.dart';
+import 'package:cooks_corner/core/constants/strings.dart';
+import 'package:cooks_corner/core/constants/styles.dart';
 import 'package:cooks_corner/features/profile/presentation/widgets/elevated_button_style.dart';
 import 'package:flutter/material.dart';
 

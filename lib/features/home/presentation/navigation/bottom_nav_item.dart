@@ -1,4 +1,4 @@
-import 'package:cooks_corner/config/constants/assets.dart';
+import 'package:cooks_corner/core/constants/assets.dart';
 
 enum BottomNavItem {
   home,
