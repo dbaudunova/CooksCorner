@@ -2,6 +2,7 @@ import 'package:cooks_corner/core/constants/colors.dart';
 import 'package:cooks_corner/core/constants/dimens.dart';
 import 'package:cooks_corner/core/constants/strings.dart';
 import 'package:cooks_corner/core/constants/styles.dart';
+import 'package:cooks_corner/core/routes/app_routes.dart';
 import 'package:cooks_corner/features/home/presentation/widgets/dish_card.dart';
 import 'package:cooks_corner/features/profile/presentation/widgets/elevated_button_style.dart';
 import 'package:cooks_corner/features/profile/presentation/widgets/exit_alert_dialog.dart';
@@ -137,7 +138,11 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
         crossAxisSpacing: 15,
       ),
       itemBuilder: (context, index) {
-        return const DishCard();
+        return DishCard(
+          onTap: () {
+            Navigator.pushNamed(context, AppRoutes.description);
+          },
+        );
       },
     );
   }

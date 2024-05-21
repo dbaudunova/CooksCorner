@@ -2,6 +2,7 @@ import 'package:cooks_corner/core/constants/colors.dart';
 import 'package:cooks_corner/core/constants/dimens.dart';
 import 'package:cooks_corner/core/constants/strings.dart';
 import 'package:cooks_corner/core/constants/styles.dart';
+import 'package:cooks_corner/core/routes/app_routes.dart';
 import 'package:cooks_corner/features/home/presentation/widgets/dish_card.dart';
 import 'package:cooks_corner/features/sign_in/presentation/widgets/orange_text_style.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
           ),
           const SizedBox(height: Dimens.d20),
           _buildTabBar(),
+          const SizedBox(height: Dimens.d14),
           Expanded(
             child: TabBarView(
               controller: _tabController,
@@ -99,7 +101,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
           crossAxisSpacing: 15,
         ),
         itemBuilder: (context, index) {
-          return const DishCard();
+          return DishCard(
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.description);
+            },
+          );
         },
       ),
     );

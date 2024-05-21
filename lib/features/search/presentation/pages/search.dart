@@ -2,6 +2,7 @@ import 'package:cooks_corner/core/constants/assets.dart';
 import 'package:cooks_corner/core/constants/dimens.dart';
 import 'package:cooks_corner/core/constants/strings.dart';
 import 'package:cooks_corner/core/constants/styles.dart';
+import 'package:cooks_corner/core/routes/app_routes.dart';
 import 'package:cooks_corner/features/sign_in/presentation/widgets/text_field_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -47,7 +48,9 @@ class _SearchState extends State<Search> with TickerProviderStateMixin {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.createRecipe);
+                  },
                   icon: SvgPicture.asset(Assets.addCircle),
                   label: Text(
                     AppStrings.addRecipe,
