@@ -10,6 +10,8 @@ class TextFieldStyle extends StatelessWidget {
     this.obscureText,
     this.onChanged,
     this.errorText,
+    this.controller,
+    this.validator,
   });
 
   final String hint;
@@ -17,10 +19,14 @@ class TextFieldStyle extends StatelessWidget {
   final bool? obscureText;
   final void Function(String)? onChanged;
   final String? errorText;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
+      controller: controller,
       onChanged: onChanged,
       obscureText: obscureText ?? false,
       obscuringCharacter: '*',

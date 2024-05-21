@@ -113,19 +113,7 @@ class _RecipeDescriptionState extends State<RecipeDescription> {
                           ),
                         ),
                         const SizedBox(height: Dimens.d24),
-                        ListView.separated(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return const IngredientsItem();
-                          },
-                          separatorBuilder: (context, index) {
-                            return Divider(
-                              color: AppColors.inputFieldBackground,
-                            );
-                          },
-                          itemCount: 12,
-                        ),
+                        _buildListView(),
                       ],
                     ),
                   ),
@@ -135,6 +123,22 @@ class _RecipeDescriptionState extends State<RecipeDescription> {
           ],
         ),
       ),
+    );
+  }
+
+  ListView _buildListView() {
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        return const IngredientsItem();
+      },
+      separatorBuilder: (context, index) {
+        return Divider(
+          color: AppColors.inputFieldBackground,
+        );
+      },
+      itemCount: 12,
     );
   }
 
