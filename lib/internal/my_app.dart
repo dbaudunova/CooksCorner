@@ -1,5 +1,8 @@
 import 'package:cooks_corner/core/routes/app_routes.dart';
 import 'package:cooks_corner/core/theme/app_theme.dart';
+import 'package:cooks_corner/features/sign_in/data/data_source/remote/sign_in_data_source.dart';
+import 'package:cooks_corner/features/sign_in/data/repository/sign_in_repository_impl.dart';
+import 'package:cooks_corner/features/sign_in/domain/use_case/sign_in_use_case.dart';
 import 'package:cooks_corner/features/sign_in/presentation/bloc/sign_in_bloc.dart';
 import 'package:cooks_corner/features/sign_up/data/remote/data_source/sign_up_data_source.dart';
 import 'package:cooks_corner/features/sign_up/data/repository/sign_up_repository_impl.dart';
@@ -18,7 +21,13 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => SignInBloc(),
+          create: (context) => SignInBloc(
+            SignInUseCase(
+              SignInRepositoryImpl(
+                SignInDataSourceImpl(),
+              ),
+            ),
+          ),
         ),
         BlocProvider(
           create: (context) => SignUpBloc(

@@ -5,7 +5,7 @@ class SignInUseCase {
 
   SignInUseCase(this.repository);
 
-  Future<void> authorizeUser(String email, String password) async {
+  Future<void> call(String email, String password) async {
     return await repository.authorizeUser(email, password);
   }
 }
